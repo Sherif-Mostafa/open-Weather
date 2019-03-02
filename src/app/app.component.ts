@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CityService } from './shared/services/city.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'OpenWeather';
+  constructor(private cityService: CityService) {
+    this.cityService.getCityData('2643743').subscribe(res =>{
+      debugger;
+    });
+  }
 }
