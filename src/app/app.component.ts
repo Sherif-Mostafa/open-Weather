@@ -9,8 +9,12 @@ import { CityService } from './shared/services/city.service';
 export class AppComponent {
   title = 'OpenWeather';
   constructor(private cityService: CityService) {
-    this.cityService.getCityData('2643743').subscribe(res =>{
-      debugger;
+    this.cityService.getCityWeather('2643743').subscribe(res => {
+      console.log(res);
     });
+    this.cityService.getCityForecast('2643743').subscribe(res => {
+      console.log(res);
+    });
+
   }
 }

@@ -1,7 +1,8 @@
 import { ICity } from '../interface/iCity';
+import { Forecast } from './forecast';
 
 export class City implements ICity {
-    id: string;    name: string;
+    id: string; name: string;
     code: string;
     clouds: string;
     dct: Date;
@@ -12,7 +13,8 @@ export class City implements ICity {
     rain: import("../interface/iVolume").IVolume;
     wind: import("../interface/iWind").IWind;
     mainFeature: import("../interface/iMain").IMain;
-    weather: import("../interface/iWeather").IWeather;
+    weather: import("../interface/iWeather").IWeather[];
     coord: import("../interface/ICoord").ICoord;
-
+    forecasts?: Forecast[];
+    population?: number;
 }

@@ -7,12 +7,14 @@ export interface IMain {
     humidity: string;
     // Minimum temperature at the moment. This is deviation from current temp that is possible for large cities
     // and megalopolises geographically expanded (use these parameter optionally). Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
-    temp_min: string;
+    tempMin: string;
     // Maximum temperature at the moment. This is deviation from current temp that is possible for large cities 
     // and megalopolises geographically expanded (use these parameter optionally). Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
-    temp_max: string;
+    tempMax: string;
     // Atmospheric pressure on the sea level, hPa
     sea_level: string;
     // Atmospheric pressure on the ground level, hPa
     grnd_level: string;
+    // 
+    temp_kf?: string;
 }
