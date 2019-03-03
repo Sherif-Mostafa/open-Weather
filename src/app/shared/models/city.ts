@@ -14,7 +14,7 @@ export class City implements ICity {
     wind: import("../interface/iWind").IWind;
     mainFeature: import("../interface/iMain").IMain;
     weather: import("../interface/iWeather").IWeather[];
-    coord: import("../interface/ICoord").ICoord;
+    coord: import("../interface/iCoord").ICoord;
     forecasts?: Forecast[];
     population?: number;
 }
