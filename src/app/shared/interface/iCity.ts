@@ -2,7 +2,7 @@ import { IVolume } from './iVolume';
 import { IWind } from './iWind';
 import { IMain } from './iMain';
 import { IWeather } from './iWeather';
-import { ICoord } from './ICoord';
+import { ICoord } from './iCoord';
 
 // City Interface
 export interface ICity {
