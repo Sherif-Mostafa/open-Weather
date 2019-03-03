@@ -7,7 +7,6 @@ import { City } from '../models/city';
 import * as JsonQuery from 'jsonpath/jsonpath';
 import { JSON_PATHS } from '../constants/defines';
 import { IWeather } from '../interface/iWeather';
-import { IForecast } from '../interface/iForecast';
 import { Forecast } from '../models/forecast';
 
 @Injectable()

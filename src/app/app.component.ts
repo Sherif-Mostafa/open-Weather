@@ -12,9 +12,11 @@ export class AppComponent {
     this.cityService.getCityWeather('2643743').subscribe(res => {
       console.log(res);
     });
-    this.cityService.getCityForecast('2643743').subscribe(res => {
+
+  }
+  select(id) {
+    this.cityService.getCityForecast(id).subscribe(res => {
       console.log(res);
     });
-
   }
 }

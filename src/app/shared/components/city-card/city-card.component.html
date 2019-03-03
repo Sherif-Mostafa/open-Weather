@@ -1,0 +1,21 @@
+<div class="card-container col-md-6 col-lg-4 col-sm-12" (click)="selected(cityCode)">
+  <div class="card mt-4 ">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4 text-center my-auto">
+          <i class="city-{{cityCode}}"></i>
+        </div>
+        <div class="col-md-8">
+          <h3 class="card-title">{{title}}</h3>
+          <div class="sub-title mr-3"><img src="http://openweathermap.org/img/w/{{weatherIcon}}.png">{{temp}} °C </div>
+          <span>Rainy</span>
+          <div class="card-text">{{tempMax}} ° / {{tempMin}} °</div>
+          <div class=" float-right">
+            <img class="mr-2" src="https://www.countryflags.io/{{flag}}/flat/16.png" /> <span
+              class="country-name">{{country}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

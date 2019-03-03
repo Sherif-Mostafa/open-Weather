@@ -1,0 +1,31 @@
+@import "./src/variables.scss";
+
+.card-container {
+  display: inline-block;
+  .sub-title {
+    font-size: 2em;
+    color: $secondary-color;
+    display: inline-block;
+  }
+  .country-name {
+    font-size: 12px;
+  }
+}
+
+.card {
+
+  &:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    cursor: pointer;
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+  }
+}
+
+[class*="city-"] {
+  font-size: 4em;
+}
