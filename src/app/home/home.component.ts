@@ -13,7 +13,7 @@ import { routes } from '../shared/constants/defines';
 })
 export class HomeComponent implements OnInit {
   constructor(public cityService: CityService,
-    private appService: AppService,
+    public appService: AppService,
     private router: Router) {
 
   }

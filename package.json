@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "compodoc": "compodoc -p tsconfig.json",
     "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
-    "postinstall": "ng build --prod"
+    "postinstall": "ng build --prod --aot"
   },
   "private": true,
   "dependencies": {
