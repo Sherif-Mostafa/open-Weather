@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="home">Home</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -18,24 +18,11 @@
   </div>
 </nav>
 
-<div class="container mt-4">
-  <div class="clearfix">
-    <button class="btn btn-primary float-right">+ Add City</button>
+<div *ngIf='appService.showLoader' class='loader'>
+    <img  src="../assets/img/rolling.gif" />
   </div>
-  <app-city-card (selectedCard)="select($event)" title="Paris" cityCode="6455259" temp="13" tempMax="21" tempMin="12" country="France" flag="fr"
-    weatherIcon="03d">
-  </app-city-card>
-  <app-city-card (selectedCard)="select($event)" title="London" cityCode="2643743" temp="12" tempMax="23" tempMin="13" country="England" flag="gb"
-    weatherIcon="10d">
-  </app-city-card>
-  <app-city-card (selectedCard)="select($event)" title="Moscow" cityCode="524901" temp="15" tempMax="25" tempMin="12" country="Russia" flag="ru"
-    weatherIcon="01d">
-  </app-city-card>
-  <app-city-card (selectedCard)="select($event)" title="Amsterdam" cityCode="2759794" temp="14" tempMax="17" tempMin="11" country="Netherland" flag="nl"
-    weatherIcon="09d">
-  </app-city-card>
-  <app-city-card (selectedCard)="select($event)" title="Pisa" cityCode="3170647" temp="10" tempMax="17" tempMin="8" country="Italy" flag="it"
-    weatherIcon="02d">
-  </app-city-card>
-</div>
+
 <router-outlet></router-outlet>
+<!-- <footer class="footer align-center">This project is made for BackBase as Frontend excersice - By Sherif Mostafa</footer> -->
+
+<app-modal #modal></app-modal>

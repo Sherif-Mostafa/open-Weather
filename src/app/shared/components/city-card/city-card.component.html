@@ -1,5 +1,10 @@
 <div class="card-container col-md-6 col-lg-4 col-sm-12" (click)="selected(cityCode)">
   <div class="card mt-4 ">
+    <span class="clearfix float-right">
+      <button (click)="removeCity($event,cityCode)" type="button" class="close  " aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </span>
     <div class="card-body">
       <div class="row">
         <div class="col-md-4 text-center my-auto">
@@ -7,8 +12,8 @@
         </div>
         <div class="col-md-8">
           <h3 class="card-title">{{title}}</h3>
-          <div class="sub-title mr-3"><img src="http://openweathermap.org/img/w/{{weatherIcon}}.png">{{temp}} °C </div>
-          <span>Rainy</span>
+          <div class="sub-title"><img src="http://openweathermap.org/img/w/{{weatherIcon}}.png">{{temp}} °C </div>
+          <div>{{mainWeather}}</div>
           <div class="card-text">{{tempMax}} ° / {{tempMin}} °</div>
           <div class=" float-right">
             <img class="mr-2" src="https://www.countryflags.io/{{flag}}/flat/16.png" /> <span

@@ -1,0 +1,36 @@
+<div class="container " *ngIf="city">
+  <div class="card mt-4 ">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="col-md-4 text-center my-auto">
+            <i class="city-{{city.id}}"></i>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h3 class="card-title">{{city.name}}</h3>
+          <div class="sub-title"><img
+              src="http://openweathermap.org/img/w/{{city.weather[0].icon}}.png">{{city.mainFeature.temp}} °C </div>
+          <div>{{city.weather[0].main}}</div>
+          <div class="card-text">{{city.mainFeature.tempMax}}° / {{city.mainFeature.tempMin}}°</div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="clearfix">
+            <div class=" float-right">
+              <img class="mr-2" src="https://www.countryflags.io/{{city.countryCode}}/flat/32.png" /> <span
+                class="country-name">{{city.countryCode}}</span>
+            </div>
+          </div>
+          <div class="details">
+            <div>Pressure {{city.mainFeature.pressure}} hPa</div>
+            <div>Humidity {{city.mainFeature.humidity}}%</div>
+            <div>Wind {{city.wind.speed}} km/h , {{city.wind.deg}}° </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-12" [chart]="chart"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -38,3 +38,8 @@ export const JSON_PATHS = {
         forecasts: "$.list"
     }
 }
+
+export const routes = {
+    'city': '/city',
+    'home': '/home'
+}

@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
 import { API } from '../constants/routes-config';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import { City } from '../models/city';
 import * as JsonQuery from 'jsonpath/jsonpath';
 import { JSON_PATHS } from '../constants/defines';
 import { IWeather } from '../interface/iWeather';
 import { Forecast } from '../models/forecast';
+import { StorageService } from './storage.service';
 
 @Injectable()
 export class CityService {
 
   selectedCity: City;
+  allCities: City[];
   cities: City[];
-  constructor(private http: HttpClient) {
+  defaultCities: City[];
+  constructor(private http: HttpClient, private storageService: StorageService) {
     this.cities = new Array<City>();
   }
+
   /**
   * To get city data using Http request
    * @param  {string} cityId represent the id of the city
@@ -80,6 +84,15 @@ export class CityService {
     }
 
     return city;
+  }
+
+  getCitiesWeather(ids: string): Observable<object> {
+    const url = API.OpenWeather.CitiesWeather.replace('{ids}', ids);
+    return this.http.get(url).pipe(map((res: any) => {
+      return (res.list as Array<any>).map(city => {
+        return this.mapCityWeather(city);
+      })
+    }));
   }
 
   /**
@@ -156,4 +169,67 @@ export class CityService {
     return city;
   }
 
+  /**
+  * To get mapped cities data model from openWeather
+   * @returns List of cities mapped with weather from openWeather
+   */
+  getCities() {
+    const cities = this.storageService.getLocalStorage('cities');
+    if (cities) {
+      this.cities = cities;
+    }
+    return this.http.get(API.Cities.Data).pipe(map(res => {
+      this.allCities = JSON.parse(JSON.stringify(res)) as Array<any>;
+      this.cities = res as Array<any>;
+      let ids = this.storageService.getLocalStorage('selectedCitiesIds');
+      if (ids) {
+
+        return ids;
+      }
+      return this.cities.splice(0, 5).map(el => {
+        return el.id;
+      });
+    }), mergeMap((ids) => {
+      return this.getSelectedCities(ids).pipe(map(_ => {
+        this.storageService.setLocalStorage('selectedCitiesIds', ids);
+        this.storageService.setLocalStorage('cities', this.cities);
+      }));
+    })
+    );
+  }
+
+  getSelectedCities(ids) {
+    return this.getCitiesWeather(ids.toString()).pipe(map(res => {
+      this.defaultCities = res as Array<any>;
+    }))
+  }
+  addNewCity(id: string) {
+    this.getCityWeather(id).subscribe(city => {
+      let deletedCity = this.cities.findIndex(item => item.id == id);
+      this.cities.splice(deletedCity, 1);
+      if(!this.defaultCities){
+        this.defaultCities = new Array<City>();
+      }
+      this.defaultCities.push(city as City);
+      let ids = this.storageService.getLocalStorage('selectedCitiesIds');
+      ids.push(+id)
+      this.storageService.setLocalStorage('selectedCitiesIds', ids);
+      this.storageService.setLocalStorage('cities', this.cities);
+    })
+  }
+
+  removeCity(id: string) {
+    let deletedCity = this.defaultCities.find(item => item.id == id);
+    let index = this.defaultCities.indexOf(deletedCity);
+    this.defaultCities.splice(index, 1);
+    let ids = this.storageService.getLocalStorage('selectedCitiesIds') as Array<any>;
+    let cityId = ids.findIndex(item => item == id);
+    ids.splice(cityId, 1);
+    this.storageService.setLocalStorage('selectedCitiesIds', ids);
+    const removedCity = this.allCities.find(city => {
+      return city.id == id;
+    })
+    this.cities.push(removedCity);
+    this.storageService.setLocalStorage('cities', this.cities);
+  }
 }

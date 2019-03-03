@@ -9,7 +9,14 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { appInitializer } from './shared/utils/app-initializer';
 import { SharedModule } from './shared/shared.module';
 import { CityService } from './shared/services/city.service';
+import { HomeComponent } from './home/home.component';
+import { AppService } from './app.service';
+import { CityDropDownComponent } from './shared/widgets/city-drop-down/city-drop-down.component';
+import { StorageService } from './shared/services/storage.service';
+import { CityComponent } from './city/city.component';
 
+import { ChartModule } from 'angular-highcharts';
+import { CityResolverGuard } from './city/city-resolver.guard';
 
 export function createTranslateLoader(http: HttpClient) {
   return new CustomTranslateLoader(http, '/i18n/', '.json');
@@ -17,6 +24,7 @@ export function createTranslateLoader(http: HttpClient) {
 
 const MODULES = [
   SharedModule,
+  ChartModule,
   TranslateModule.forRoot({
     loader: {
       provide: TranslateLoader,
@@ -27,12 +35,20 @@ const MODULES = [
 ]
 
 const SERVICES = [
-  CityService
+  AppService,
+  CityService,
+  StorageService,
+  CityResolverGuard
 ]
 
+const ENTRY_COMPONENTS = [
+  CityDropDownComponent
+]
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +65,7 @@ const SERVICES = [
     },
     ...SERVICES
   ],
+  entryComponents: [...ENTRY_COMPONENTS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

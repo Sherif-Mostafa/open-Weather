@@ -13,10 +13,12 @@ export class CityCardComponent implements OnInit {
   @Input() tempMax: string;
   @Input() tempMin: string;
   @Input() country: string;
+  @Input() mainWeather: string;
   @Input() flag: string;
   @Input() weatherIcon: string;
 
   @Output() selectedCard = new EventEmitter();
+  @Output() deletedCard = new EventEmitter();
 
   constructor() { }
 
@@ -25,5 +27,10 @@ export class CityCardComponent implements OnInit {
 
   selected(cityCode) {
     this.selectedCard.emit(cityCode);
+  }
+
+  removeCity(e, cityCode) {
+    e.stopPropagation();
+    this.deletedCard.emit(cityCode);
   }
 }

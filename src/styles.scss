@@ -16,7 +16,24 @@ i {
 .btn-primary {
   background-color: $primary-color;
   border-color: #3daeb6;
-  &:hover{
-      background-color: #3daeb6;
+  &:hover {
+    background-color: #3daeb6;
   }
+}
+
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+  overflow: hidden;
+  
 }
