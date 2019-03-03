@@ -1,0 +1,27 @@
+@import "./src/variables.scss";
+
+[class*="city-"] {
+  font-size: 6em;
+}
+
+.container {
+  .card-title {
+    font-size: 2.5em;
+  }
+  .sub-title {
+    font-size: 3em;
+    color: $secondary-color;
+    display: inline-block;
+    img {
+      width: 80px;
+    }
+  }
+  .country-name {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+  .details {
+    margin-top: 35px;
+    color: $secondary-color;
+  }
+}

@@ -1,0 +1,14 @@
+<div *ngIf="!appService.showLoader" class="container mt-4">
+  <div class="clearfix">
+    <button class="btn btn-primary float-right" (click)="addCity()">+ Add City</button>
+  </div>
+  <div *ngIf="!cityService.defaultCities || (cityService.defaultCities && !cityService.defaultCities.length)" class="text-center">
+    <i class="glyphicon glyphicon-info-sign"></i>
+    <span>No cities choosen please add city</span>
+  </div>
+  <app-city-card *ngFor="let city of cityService.defaultCities" (deletedCard)="deleteCity($event)"
+    (selectedCard)="select($event)" [title]="city.name" [cityCode]="city.id" [mainWeather]="city.weather[0].main"
+    [temp]="city.mainFeature.temp" [tempMax]="city.mainFeature.tempMax" [tempMin]="city.mainFeature.tempMin"
+    [country]="city.countryCode" [flag]="city.countryCode" [weatherIcon]="city.weather[0].icon">
+  </app-city-card>
+</div>
