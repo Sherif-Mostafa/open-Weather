@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { CustomTranslateLoader } from './shared/utils/custom-translate-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { appInitializer } from './shared/utils/app-initializer';
+import { SharedModule } from './shared/shared.module';
+import { CityService } from './shared/services/city.service';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -14,6 +16,7 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 const MODULES = [
+  SharedModule,
   TranslateModule.forRoot({
     loader: {
       provide: TranslateLoader,
@@ -21,6 +24,10 @@ const MODULES = [
       deps: [HttpClient]
     }
   }),
+]
+
+const SERVICES = [
+  CityService
 ]
 
 @NgModule({
@@ -39,7 +46,8 @@ const MODULES = [
       useFactory: appInitializer,
       deps: [TranslateService],
       multi: true
-    }
+    },
+    ...SERVICES
   ],
   bootstrap: [AppComponent]
 })

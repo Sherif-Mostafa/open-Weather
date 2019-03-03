@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "variables.scss";
+
+body {
+  background-color: #f2f2f2;
+}
+
+h3 {
+  color: $primary-color;
+}
+
+i {
+  color: $secondary-color;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border-color: #3daeb6;
+  &:hover{
+      background-color: #3daeb6;
+  }
+}
