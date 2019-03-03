@@ -1,5 +1,43 @@
 {
-    "Home": {
-        "Title": "Welcome to"
+    "home": {
+        "title": "Welcome to",
+        "addButton": "+ Add City",
+        "noCities": "No cities choosen, Please add city"
+    },
+    "city": {
+        "pressure": "Pressure",
+        "humidity": "Humidity",
+        "wind": "Wind",
+        "unit": {
+            "celsius": "°C",
+            "pressure": "hPa",
+            "degree": "°",
+            "wind": "km/h",
+            "percentage": "%"
+        }
+    },
+    "common": {
+        "addCity": {
+            "title": "Add new City",
+            "btn": "+ Add",
+            "select": "Select...",
+            "selectCity": "Select City:"
+        },
+        "home": "Home",
+        "countries": {
+            "IT": "Italy",
+            "FR": "France",
+            "GB": "England",
+            "BG": "Bulgaria",
+            "DE": "Germany",
+            "RU": "Russia",
+            "ES": "Spain",
+            "UA": "Ukraine",
+            "NL": "Netherlands",
+            "GR": "Greece",
+            "DK": "Denmark",
+            "FI": "Finland",
+            "IE": "Ireland"
+        }
     }
 }

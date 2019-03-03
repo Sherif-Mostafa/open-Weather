@@ -6,6 +6,7 @@ import { ModalModule } from 'ngx-bootstrap';
 import { ModalComponent } from './components/modal/modal.component';
 import { DynamicContentDirective } from './directives/dynamic-content.directive';
 import { CityDropDownComponent } from './widgets/city-drop-down/city-drop-down.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 const COMPONENTS = [
   CityCardComponent,
@@ -25,6 +26,7 @@ const DIRECTIVES = [
   exports: [...COMPONENTS, ...DIRECTIVES, ModalModule, ...WIDGETS],
   imports: [
     HttpClientModule,
+    TranslateModule,
     ModalModule.forRoot(),
     CommonModule
   ]

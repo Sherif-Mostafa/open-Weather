@@ -8,10 +8,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="home">Home</a>
+        <a class="nav-link" href="home">{{"common.home" |translate}}</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <form  *ngIf="false" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
@@ -19,10 +19,9 @@
 </nav>
 
 <div *ngIf='appService.showLoader' class='loader'>
-    <img  src="../assets/img/rolling.gif" />
-  </div>
+  <img src="../assets/img/rolling.gif" />
+</div>
 
 <router-outlet></router-outlet>
-<!-- <footer class="footer align-center">This project is made for BackBase as Frontend excersice - By Sherif Mostafa</footer> -->
 
 <app-modal #modal></app-modal>
