@@ -17,13 +17,14 @@
         }
     },
     "common": {
+        "appTitle": "OpenWeather",
+        "home": "Home",
         "addCity": {
             "title": "Add new City",
             "btn": "+ Add",
             "select": "Select...",
             "selectCity": "Select City:"
         },
-        "home": "Home",
         "countries": {
             "IT": "Italy",
             "FR": "France",

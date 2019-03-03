@@ -3,16 +3,18 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { CityService } from '../shared/services/city.service';
 import { map } from 'rxjs/operators';
 import { AppService } from '../app.service';
+import { of } from 'rxjs/internal/observable/of';
 
 @Injectable()
 export class CityResolverGuard implements Resolve<any> {
   constructor(private cityService: CityService, private appService: AppService) {
-  } 
+  }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     this.appService.showLoader = true;
-
-   return this.cityService.getCities().pipe(map(_ => {
-
+    if (this.cityService.cities && this.cityService.defaultCities) {
+      return of(true);
+    }
+    return this.cityService.getCities().pipe(map(_ => {
     }));
   }
 }

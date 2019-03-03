@@ -9,20 +9,25 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-  title = 'OpenWeather';
+  /** title of the app */
+  title = this.translate.instant('common.appTitle');;
+  /** Reference to the custom component modal  */
   @ViewChild('modal') modal: ModalComponent;
 
   constructor(public appService: AppService, private translate: TranslateService) {
-
   }
 
+  /** angular hook to run on init of the component
+   * handle the modal dynamic component render once the the modal SUbject fires (next)
+   * and handle the modal close 
+   */
   ngOnInit(): void {
     this.appService.modalSubject.subscribe(component => {
+      // if the component that will be rendered is city drop down set addCity title to the modal
       if (component == CityDropDownComponent) {
         this.modal.title = this.translate.instant('common.addCity.title');
-        this.modal.showModal(component);
       }
+      this.modal.showModal(component);
     })
     this.appService.hideModal.subscribe(_ => {
       this.modal.hideModal();

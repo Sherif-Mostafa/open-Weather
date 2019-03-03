@@ -203,6 +203,10 @@ export class CityService {
       this.defaultCities = res as Array<any>;
     }))
   }
+
+  /** Add new city to the home by getting it's id and add it to the default cities
+   * @param id new city id
+   */
   addNewCity(id: string) {
     this.getCityWeather(id).subscribe(city => {
       let deletedCity = this.cities.findIndex(item => item.id == id);
@@ -218,6 +222,9 @@ export class CityService {
     })
   }
 
+  /** Remove specfic city card from the home by selecting it from default services array and remove it 
+   * @param id the id of the city will be deleted
+   */
   removeCity(id: string) {
     let deletedCity = this.defaultCities.find(item => item.id == id);
     let index = this.defaultCities.indexOf(deletedCity);

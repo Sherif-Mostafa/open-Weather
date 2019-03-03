@@ -1,35 +1,57 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, inject, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { AppService } from './app.service';
+import { AppServiceMock } from './mock/service/app-service.mock';
+import { CityDropDownComponent } from './shared/widgets/city-drop-down/city-drop-down.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let app: AppComponent;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        TranslateModule.forRoot()
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+      providers: [{ provide: AppService, useClass: AppServiceMock }],
       declarations: [
         AppComponent
       ],
     }).compileComponents();
   }));
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
+    fixture.detectChanges();
+  })
+
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'OpenWeather'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('OpenWeather');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  it('should show modal', inject([AppService], (appService) => {
+    app.ngOnInit();
+    app.modal = new ModalComponent(null, null, null);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to OpenWeather!');
-  });
+    spyOn(app.modal, 'showModal');
+    app.appService.modalSubject.next(CityDropDownComponent);
+    fixture.detectChanges();
+    expect(app.modal.title).toBeDefined();
+    expect(app.modal.showModal).toHaveBeenCalled();
+  }));
+
+  it('should hide modal', inject([AppService], (appService) => {
+    app.ngOnInit();
+    app.modal = new ModalComponent(null, null, null);
+    spyOn(app.modal, 'hideModal');
+    app.appService.hideModal.next(CityDropDownComponent);
+    fixture.detectChanges();
+    expect(app.modal.hideModal).toHaveBeenCalled();
+  }));
 });

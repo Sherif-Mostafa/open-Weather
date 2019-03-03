@@ -35,7 +35,7 @@ export class ModalComponent implements OnInit {
     }
   }
 
-  showModal(component): void {
+  public showModal(component): void {
     this.component = component;
     this.isLoadContent = true;
     this.isModalShown = true;
