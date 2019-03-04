@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit {
     this.appService.showLoader = true;
     this.cityService.getCities().subscribe(_ => {
       this.appService.showLoader = false;
+    }, error => {
+      this.appService.showLoader = false;
     });
 
   }
