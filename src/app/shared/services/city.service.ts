@@ -9,6 +9,7 @@ import { JSON_PATHS } from '../constants/defines';
 import { IWeather } from '../interface/iWeather';
 import { Forecast } from '../models/forecast';
 import { StorageService } from './storage.service';
+import { of } from 'rxjs/internal/observable/of';
 
 @Injectable()
 export class CityService {
@@ -175,15 +176,22 @@ export class CityService {
    */
   getCities() {
     const cities = this.storageService.getLocalStorage('cities');
-    if (cities) {
+    if (cities && this.allCities) {
       this.cities = cities;
+      return of({});
     }
     return this.http.get(API.Cities.Data).pipe(map(res => {
       this.allCities = JSON.parse(JSON.stringify(res)) as Array<any>;
       this.cities = res as Array<any>;
       let ids = this.storageService.getLocalStorage('selectedCitiesIds');
       if (ids) {
-
+        (ids as Array<string>).map(el => {
+          let deletedCity = this.cities.find(item => item.id == el);
+          if (deletedCity) {
+            let index = this.cities.indexOf(deletedCity);
+            this.cities.splice(index, 1);
+          }
+        })
         return ids;
       }
       return this.cities.splice(0, 5).map(el => {
@@ -211,7 +219,7 @@ export class CityService {
     this.getCityWeather(id).subscribe(city => {
       let deletedCity = this.cities.findIndex(item => item.id == id);
       this.cities.splice(deletedCity, 1);
-      if(!this.defaultCities){
+      if (!this.defaultCities) {
         this.defaultCities = new Array<City>();
       }
       this.defaultCities.push(city as City);

@@ -1,0 +1,1274 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>open-weather documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">open-weather documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>CityService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/shared/services/city.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allCities">allCities</a>
+                            </li>
+                            <li>
+                                <a href="#cities">cities</a>
+                            </li>
+                            <li>
+                                <a href="#defaultCities">defaultCities</a>
+                            </li>
+                            <li>
+                                <a href="#selectedCity">selectedCity</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addNewCity">addNewCity</a>
+                            </li>
+                            <li>
+                                <a href="#getCities">getCities</a>
+                            </li>
+                            <li>
+                                <a href="#getCitiesWeather">getCitiesWeather</a>
+                            </li>
+                            <li>
+                                <a href="#getCityForecast">getCityForecast</a>
+                            </li>
+                            <li>
+                                <a href="#getCityWeather">getCityWeather</a>
+                            </li>
+                            <li>
+                                <a href="#getSelectedCities">getSelectedCities</a>
+                            </li>
+                            <li>
+                                <a href="#mapCityForecast">mapCityForecast</a>
+                            </li>
+                            <li>
+                                <a href="#mapCityWeather">mapCityWeather</a>
+                            </li>
+                            <li>
+                                <a href="#removeCity">removeCity</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, storageService: <a href="../injectables/StorageService.html">StorageService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/services/city.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>storageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StorageService.html" target="_self" >StorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addNewCity"></a>
+                    <span class="name">
+                        <b>
+                            addNewCity
+                        </b>
+                        <a href="#addNewCity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addNewCity(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="210"
+                            class="link-to-prism">src/app/shared/services/city.service.ts:210</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Add new city to the home by getting it&#39;s id and add it to the default cities</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new city id</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCities"></a>
+                    <span class="name">
+                        <b>
+                            getCities
+                        </b>
+                        <a href="#getCities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCities()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">src/app/shared/services/city.service.ts:176</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>To get mapped cities data model from openWeather</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>List of cities mapped with weather from openWeather</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCitiesWeather"></a>
+                    <span class="name">
+                        <b>
+                            getCitiesWeather
+                        </b>
+                        <a href="#getCitiesWeather"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCitiesWeather(ids: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/shared/services/city.service.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ids</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;object&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCityForecast"></a>
+                    <span class="name">
+                        <b>
+                            getCityForecast
+                        </b>
+                        <a href="#getCityForecast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCityForecast(cityId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/shared/services/city.service.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>To get mapped city data model from any item</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cityId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;object&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Object of type City with it&#39;s forecast</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCityWeather"></a>
+                    <span class="name">
+                        <b>
+                            getCityWeather
+                        </b>
+                        <a href="#getCityWeather"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCityWeather(cityId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/shared/services/city.service.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>To get city data using Http request</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cityId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>represent the id of the city</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;object&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSelectedCities"></a>
+                    <span class="name">
+                        <b>
+                            getSelectedCities
+                        </b>
+                        <a href="#getSelectedCities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSelectedCities(ids)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="201"
+                            class="link-to-prism">src/app/shared/services/city.service.ts:201</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ids</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapCityForecast"></a>
+                    <span class="name">
+                        <b>
+                            mapCityForecast
+                        </b>
+                        <a href="#mapCityForecast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mapCityForecast(response: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/shared/services/city.service.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>To get mapped city data model from any item</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>response</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>represent the Http response of the city forecast</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/City.html" target="_self" >City</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Object of type City with it&#39;s forecast</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapCityWeather"></a>
+                    <span class="name">
+                        <b>
+                            mapCityWeather
+                        </b>
+                        <a href="#mapCityWeather"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mapCityWeather(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/shared/services/city.service.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>To get mapped city data model from any item</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>represent the id of the city</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/City.html" target="_self" >City</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Object of type City</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeCity"></a>
+                    <span class="name">
+                        <b>
+                            removeCity
+                        </b>
+                        <a href="#removeCity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeCity(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="228"
+                            class="link-to-prism">src/app/shared/services/city.service.ts:228</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Remove specfic city card from the home by selecting it from default services array and remove it </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>the id of the city will be deleted</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allCities"></a>
+                        <span class="name">
+                            <b>
+                            allCities</b>
+                            <a href="#allCities"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/City.html" target="_self" >City[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/services/city.service.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cities"></a>
+                        <span class="name">
+                            <b>
+                            cities</b>
+                            <a href="#cities"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/City.html" target="_self" >City[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/services/city.service.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="defaultCities"></a>
+                        <span class="name">
+                            <b>
+                            defaultCities</b>
+                            <a href="#defaultCities"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/City.html" target="_self" >City[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/services/city.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedCity"></a>
+                        <span class="name">
+                            <b>
+                            selectedCity</b>
+                            <a href="#selectedCity"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/City.html" target="_self" >City</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/services/city.service.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { API } from &#x27;../constants/routes-config&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { map, mergeMap } from &#x27;rxjs/operators&#x27;;
+import { Observable } from &#x27;rxjs/internal/Observable&#x27;;
+import { City } from &#x27;../models/city&#x27;;
+import * as JsonQuery from &#x27;jsonpath/jsonpath&#x27;;
+import { JSON_PATHS } from &#x27;../constants/defines&#x27;;
+import { IWeather } from &#x27;../interface/iWeather&#x27;;
+import { Forecast } from &#x27;../models/forecast&#x27;;
+import { StorageService } from &#x27;./storage.service&#x27;;
+
+@Injectable()
+export class CityService {
+
+  selectedCity: City;
+  allCities: City[];
+  cities: City[];
+  defaultCities: City[];
+  constructor(private http: HttpClient, private storageService: StorageService) {
+    this.cities &#x3D; new Array&lt;City&gt;();
+  }
+
+  /**
+  * To get city data using Http request
+   * @param  {string} cityId represent the id of the city
+   */
+  getCityWeather(cityId: string): Observable&lt;object&gt; {
+    const url &#x3D; API.OpenWeather.CityWeather.replace(&#x27;{city}&#x27;, cityId);
+    return this.http.get(url).pipe(map(res &#x3D;&gt; {
+      return this.mapCityWeather(res);
+    }));
+  }
+
+  /**
+    * To get mapped city data model from any item
+     * @param  {any} item represent the id of the city
+     * @returns Object of type City
+     */
+  mapCityWeather(item: any): City {
+    let city &#x3D; new City();
+
+    city.id &#x3D; JsonQuery.value(item, JSON_PATHS.City.id) || null;
+    city.name &#x3D; JsonQuery.value(item, JSON_PATHS.City.name) || null;
+    city.code &#x3D; JsonQuery.value(item, JSON_PATHS.City.code) || null;
+    city.countryCode &#x3D; JsonQuery.value(item, JSON_PATHS.City.countryCode) || null;
+    city.dct &#x3D; JsonQuery.value(item, JSON_PATHS.City.dt) || null;
+    city.clouds &#x3D; JsonQuery.value(item, JSON_PATHS.City.clouds) || null;
+    city.coord &#x3D; {
+      long: JsonQuery.value(item, JSON_PATHS.City.lon) || null,
+      lat: JsonQuery.value(item, JSON_PATHS.City.lat) || null
+    };
+
+    city.mainFeature &#x3D; {
+      humidity: JsonQuery.value(item, JSON_PATHS.City.humidity) || null,
+      grnd_level: JsonQuery.value(item, JSON_PATHS.City.grnd_level) || null,
+      sea_level: JsonQuery.value(item, JSON_PATHS.City.sea_level) || null,
+      pressure: JsonQuery.value(item, JSON_PATHS.City.pressure) || null,
+      temp: JsonQuery.value(item, JSON_PATHS.City.temp) || null,
+      tempMax: JsonQuery.value(item, JSON_PATHS.City.tempMax) || null,
+      tempMin: JsonQuery.value(item, JSON_PATHS.City.tempMin) || null
+    };
+    city.wind &#x3D; {
+      deg: JsonQuery.value(item, JSON_PATHS.City.windSpeed) || null,
+      speed: JsonQuery.value(item, JSON_PATHS.City.windDegree) || null
+    }
+
+    city.sunrise &#x3D; JsonQuery.value(item, JSON_PATHS.City.sunrise) ? new Date(JsonQuery.value(item, JSON_PATHS.City.sunrise)) : null;
+    city.sunset &#x3D; JsonQuery.value(item, JSON_PATHS.City.sunset) ? new Date(JsonQuery.value(item, JSON_PATHS.City.sunset)) : null;
+
+    const weatherData &#x3D; JsonQuery.value(item, JSON_PATHS.City.weather) as Array&lt;object&gt; || null;
+    if (weatherData) {
+      city.weather &#x3D; new Array();
+      weatherData.map(el &#x3D;&gt; {
+        let weather: IWeather &#x3D;
+        {
+          id: JsonQuery.value(el, JSON_PATHS.City.weatherId) || null,
+          icon: JsonQuery.value(el, JSON_PATHS.City.weatherIcon) || null,
+          main: JsonQuery.value(el, JSON_PATHS.City.weatherMain) || null,
+          description: JsonQuery.value(el, JSON_PATHS.City.weatherDescription) || null
+        }
+        city.weather.push(weather);
+      })
+    }
+
+    return city;
+  }
+
+  getCitiesWeather(ids: string): Observable&lt;object&gt; {
+    const url &#x3D; API.OpenWeather.CitiesWeather.replace(&#x27;{ids}&#x27;, ids);
+    return this.http.get(url).pipe(map((res: any) &#x3D;&gt; {
+      return (res.list as Array&lt;any&gt;).map(city &#x3D;&gt; {
+        return this.mapCityWeather(city);
+      })
+    }));
+  }
+
+  /**
+  * To get mapped city data model from any item
+   * @param  {any} response represent the Http response of the city forecast
+   * @returns Object of type City with it&#x27;s forecast
+   */
+  getCityForecast(cityId: string): Observable&lt;object&gt; {
+    const url &#x3D; API.OpenWeather.CityForecast.replace(&#x27;{city}&#x27;, cityId);
+    return this.http.get(url).pipe(map(res &#x3D;&gt; {
+      return this.mapCityForecast(res);
+    }));
+  }
+
+  /**
+    * To get mapped city data model from any item
+     * @param  {any} response represent the Http response of the city forecast
+     * @returns Object of type City with it&#x27;s forecast
+     */
+  mapCityForecast(response: any): City {
+    let city: City &#x3D; JsonQuery.value(response, JSON_PATHS.City.city);
+
+    if (city) {
+
+      let forecasts &#x3D; JsonQuery.value(response, JSON_PATHS.City.forecasts);
+      if (forecasts) {
+        city.forecasts &#x3D; new Array();
+        forecasts.map(el &#x3D;&gt; {
+          let forecast: Forecast &#x3D; {
+            wind: {
+              deg: JsonQuery.value(el, JSON_PATHS.City.windDegree) || null,
+              speed: JsonQuery.value(el, JSON_PATHS.City.windSpeed) || null
+            },
+            clouds: JsonQuery.value(el, JSON_PATHS.City.clouds) || null,
+            dct: JsonQuery.value(el, JSON_PATHS.City.dtText) || null,
+            mainFeature: {
+              grnd_level: JsonQuery.value(el, JSON_PATHS.City.grnd_level) || null,
+              humidity: JsonQuery.value(el, JSON_PATHS.City.humidity) || null,
+              pressure: JsonQuery.value(el, JSON_PATHS.City.pressure) || null,
+              sea_level: JsonQuery.value(el, JSON_PATHS.City.sea_level) || null,
+              temp: JsonQuery.value(el, JSON_PATHS.City.temp) || null,
+              tempMax: JsonQuery.value(el, JSON_PATHS.City.tempMax) || null,
+              tempMin: JsonQuery.value(el, JSON_PATHS.City.tempMin) || null,
+              temp_kf: JsonQuery.value(el, JSON_PATHS.City.temp_kf) || null
+            },
+            rain: {
+              one_hour: el[JSON_PATHS.City.rain] ? el[JSON_PATHS.City.rain][JSON_PATHS.City._1h] : null,
+              three_hours: el[JSON_PATHS.City.rain] ? el[JSON_PATHS.City.rain][JSON_PATHS.City._1h] : null
+            },
+            snow: {
+              one_hour: el[JSON_PATHS.City.snow] ? el[JSON_PATHS.City.snow][JSON_PATHS.City._1h] : null,
+              three_hours: el[JSON_PATHS.City.snow] ? el[JSON_PATHS.City.snow][JSON_PATHS.City._1h] : null
+            }
+          }
+          const weatherData &#x3D; JsonQuery.value(el, JSON_PATHS.City.weather) as Array&lt;object&gt; || null;
+          if (weatherData) {
+            forecast.weather &#x3D; new Array();
+            weatherData.map(item &#x3D;&gt; {
+              let weather: IWeather &#x3D;
+              {
+                id: JsonQuery.value(item, JSON_PATHS.City.weatherId) || null,
+                icon: JsonQuery.value(item, JSON_PATHS.City.weatherIcon) || null,
+                main: JsonQuery.value(item, JSON_PATHS.City.weatherMain) || null,
+                description: JsonQuery.value(item, JSON_PATHS.City.weatherDescription) || null
+              }
+              forecast.weather.push(weather);
+            })
+          }
+          city.forecasts.push(forecast);
+        })
+      }
+    }
+
+    return city;
+  }
+
+  /**
+  * To get mapped cities data model from openWeather
+   * @returns List of cities mapped with weather from openWeather
+   */
+  getCities() {
+    const cities &#x3D; this.storageService.getLocalStorage(&#x27;cities&#x27;);
+    if (cities) {
+      this.cities &#x3D; cities;
+    }
+    return this.http.get(API.Cities.Data).pipe(map(res &#x3D;&gt; {
+      this.allCities &#x3D; JSON.parse(JSON.stringify(res)) as Array&lt;any&gt;;
+      this.cities &#x3D; res as Array&lt;any&gt;;
+      let ids &#x3D; this.storageService.getLocalStorage(&#x27;selectedCitiesIds&#x27;);
+      if (ids) {
+
+        return ids;
+      }
+      return this.cities.splice(0, 5).map(el &#x3D;&gt; {
+        return el.id;
+      });
+    }), mergeMap((ids) &#x3D;&gt; {
+      return this.getSelectedCities(ids).pipe(map(_ &#x3D;&gt; {
+        this.storageService.setLocalStorage(&#x27;selectedCitiesIds&#x27;, ids);
+        this.storageService.setLocalStorage(&#x27;cities&#x27;, this.cities);
+      }));
+    })
+    );
+  }
+
+  getSelectedCities(ids) {
+    return this.getCitiesWeather(ids.toString()).pipe(map(res &#x3D;&gt; {
+      this.defaultCities &#x3D; res as Array&lt;any&gt;;
+    }))
+  }
+
+  /** Add new city to the home by getting it&#x27;s id and add it to the default cities
+   * @param id new city id
+   */
+  addNewCity(id: string) {
+    this.getCityWeather(id).subscribe(city &#x3D;&gt; {
+      let deletedCity &#x3D; this.cities.findIndex(item &#x3D;&gt; item.id &#x3D;&#x3D; id);
+      this.cities.splice(deletedCity, 1);
+      if(!this.defaultCities){
+        this.defaultCities &#x3D; new Array&lt;City&gt;();
+      }
+      this.defaultCities.push(city as City);
+      let ids &#x3D; this.storageService.getLocalStorage(&#x27;selectedCitiesIds&#x27;);
+      ids.push(+id)
+      this.storageService.setLocalStorage(&#x27;selectedCitiesIds&#x27;, ids);
+      this.storageService.setLocalStorage(&#x27;cities&#x27;, this.cities);
+    })
+  }
+
+  /** Remove specfic city card from the home by selecting it from default services array and remove it 
+   * @param id the id of the city will be deleted
+   */
+  removeCity(id: string) {
+    let deletedCity &#x3D; this.defaultCities.find(item &#x3D;&gt; item.id &#x3D;&#x3D; id);
+    let index &#x3D; this.defaultCities.indexOf(deletedCity);
+    this.defaultCities.splice(index, 1);
+    let ids &#x3D; this.storageService.getLocalStorage(&#x27;selectedCitiesIds&#x27;) as Array&lt;any&gt;;
+    let cityId &#x3D; ids.findIndex(item &#x3D;&gt; item &#x3D;&#x3D; id);
+    ids.splice(cityId, 1);
+    this.storageService.setLocalStorage(&#x27;selectedCitiesIds&#x27;, ids);
+    const removedCity &#x3D; this.allCities.find(city &#x3D;&gt; {
+      return city.id &#x3D;&#x3D; id;
+    })
+    this.cities.push(removedCity);
+    this.storageService.setLocalStorage(&#x27;cities&#x27;, this.cities);
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'CityService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
