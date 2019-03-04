@@ -176,13 +176,15 @@ export class CityService {
    * @returns List of cities mapped with weather from openWeather
    */
   getCities() {
-    const cities = this.storageService.getLocalStorage('cities');
-    if (cities && this.allCities) {
-      this.cities = cities;
-    }
     return this.http.get(API.Cities.Data).pipe(map(res => {
       this.allCities = JSON.parse(JSON.stringify(res)) as Array<any>;
-      this.cities = res as Array<any>;
+      const cities = this.storageService.getLocalStorage('cities');
+      if (cities) {
+        this.cities = cities;
+      }
+      else {
+        this.cities = res as Array<any>;
+      }
       let ids = this.storageService.getLocalStorage('selectedCitiesIds');
       if (ids) {
         (ids as Array<string>).map(el => {
