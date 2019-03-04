@@ -9,7 +9,7 @@ import { JSON_PATHS } from '../constants/defines';
 import { IWeather } from '../interface/iWeather';
 import { Forecast } from '../models/forecast';
 import { StorageService } from './storage.service';
-import { of } from 'rxjs/internal/observable/of';
+import { empty } from 'rxjs/internal/observable/empty';
 
 @Injectable()
 export class CityService {
@@ -178,7 +178,7 @@ export class CityService {
     const cities = this.storageService.getLocalStorage('cities');
     if (cities && this.allCities) {
       this.cities = cities;
-      return of({});
+      return empty();
     }
     return this.http.get(API.Cities.Data).pipe(map(res => {
       this.allCities = JSON.parse(JSON.stringify(res)) as Array<any>;
